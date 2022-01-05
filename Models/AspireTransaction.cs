@@ -13,7 +13,7 @@ namespace Bank2Budget
 
         public string GetCSVLine()
         {
-            return $"{Date.ToString("MM/dd/yyyy")},{Outflow},{Inflow},{Category.Name},{Account.Name},{Memo},{Status.Name}";
+            return $"{Date.ToString("MM/dd/yyyy")},{Outflow:0.00},{Inflow:0.00},{Category.Name},{Account.Name},{Memo},{Status.Name}";
         }
     }
 }

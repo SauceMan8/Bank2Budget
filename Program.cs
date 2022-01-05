@@ -50,7 +50,7 @@ namespace Bank2Budget
                         Date = oldTransaction.EffectiveDate,
                         Inflow = oldTransaction.Amount,
                         Category = AspireCategory.Available,
-                        Memo = $"PayCheck ({oldTransaction.Amount})",
+                        Memo = $"PayCheck ({oldTransaction.Amount:0.00})",
                         Account = account,
                         Status = AspireStatusType.Complete
                     },
@@ -189,6 +189,40 @@ namespace Bank2Budget
                         Date = oldTransaction.EffectiveDate,
                         Outflow = oldTransaction.Amount * (-1),
                         Memo = "Costco",
+                        Account = account,
+                        Status = AspireStatusType.Complete
+                    }
+                };
+                return trasactions;
+            }
+
+            if (oldTransaction.Description?.Contains("Rent CO: Eden Operating", StringComparison.CurrentCultureIgnoreCase) ?? false && oldTransaction.Amount < 0)
+            {
+                trasactions = new List<AspireTransaction>
+                {
+                    new AspireTransaction
+                    {
+                        Date = oldTransaction.EffectiveDate,
+                        Outflow = oldTransaction.Amount * (-1),
+                        Category = AspireCategory.Rent,
+                        Memo = "Rent",
+                        Account = account,
+                        Status = AspireStatusType.Complete
+                    }
+                };
+                return trasactions;
+            }
+
+            if (oldTransaction.Description?.Contains("The Church Of Jesus Christ", StringComparison.CurrentCultureIgnoreCase) ?? false && oldTransaction.Amount < 0)
+            {
+                trasactions = new List<AspireTransaction>
+                {
+                    new AspireTransaction
+                    {
+                        Date = oldTransaction.EffectiveDate,
+                        Outflow = oldTransaction.Amount * (-1),
+                        Category = AspireCategory.Tithes,
+                        Memo = "Tithing",
                         Account = account,
                         Status = AspireStatusType.Complete
                     }
