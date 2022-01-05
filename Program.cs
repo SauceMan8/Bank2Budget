@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Bank2Budget
 {
+    // dotnet run ExportedTransactionsCheck.csv ExportedTransactionsCredit.csv NewAll.csv
     class Program
     {
         static void Main(string[] args)
