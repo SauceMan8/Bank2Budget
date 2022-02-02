@@ -10,13 +10,23 @@ namespace Bank2Budget
     {
         static void Main(string[] args)
         {
-            var macuTransacts = FileHelper.GetMACUTransactions(args[0]);
-            var macuTransacts2 = FileHelper.GetMACUTransactions(args[1]);
+            var inputFile1 = "ExportedTransactionsCheck.csv";
+            var inputFile2 = "ExportedTransactionsCredit.csv";
+            var outputFile = "ExportedTransactionsCredit.csv";
+            if (args != null && args.Count() > 0)
+            {
+                inputFile1 = args[0];
+                inputFile2 = args[1];
+                outputFile = "ExportedTransactionsCredit.csv";
+            }
+
+            var macuTransacts = FileHelper.GetMACUTransactions(inputFile1);
+            var macuTransacts2 = FileHelper.GetMACUTransactions(inputFile2);
             var aspireTransacts = MappingHelper.GetAspireTransactionsFromMACUTransactions(macuTransacts, AspireAccount.MACUDebit);
             aspireTransacts.AddRange(MappingHelper.GetAspireTransactionsFromMACUTransactions(macuTransacts2, AspireAccount.MACUCredit));
             
             var orderedTrasactions = aspireTransacts.OrderBy(t => t.Date).ToList();
-            FileHelper.WriteNewFile(args[2], orderedTrasactions);
+            FileHelper.WriteNewFile(outputFile, orderedTrasactions);
         }
     }
 
@@ -41,7 +51,9 @@ namespace Bank2Budget
             if (oldTransaction == null)
                 return trasactions;
 
-            if (oldTransaction.Description?.Contains("MELALEUCA", StringComparison.CurrentCultureIgnoreCase) ?? false && oldTransaction.Amount > 0)
+            var isPositive = oldTransaction.Amount > 0;
+            
+            if ((oldTransaction.Description?.Contains("MELALEUCA", StringComparison.CurrentCultureIgnoreCase) ?? false) && isPositive)
             {
                 trasactions = new List<AspireTransaction>
                 {
@@ -76,7 +88,7 @@ namespace Bank2Budget
                 return trasactions;
             }
 
-            if (oldTransaction.Description?.Contains("To Loan", StringComparison.CurrentCultureIgnoreCase) ?? false && oldTransaction.Amount < 0)
+            if ((oldTransaction.Description?.Contains("To Loan", StringComparison.CurrentCultureIgnoreCase) ?? false) && !isPositive)
             {
                 trasactions = new List<AspireTransaction>
                 {
@@ -93,10 +105,10 @@ namespace Bank2Budget
                 return trasactions;
             }
 
-            if (oldTransaction.Description?.Contains("From Share", StringComparison.CurrentCultureIgnoreCase) ?? false && oldTransaction.Amount > 0)
+            if ((oldTransaction.Description?.Contains("From Share", StringComparison.CurrentCultureIgnoreCase) ?? false) && isPositive)
                 return trasactions;
 
-            if (oldTransaction.Description?.Contains("ROCKY MOUNTAIN", StringComparison.CurrentCultureIgnoreCase) ?? false && oldTransaction.Amount < 0)
+            if ((oldTransaction.Description?.Contains("ROCKY MOUNTAIN", StringComparison.CurrentCultureIgnoreCase) ?? false) && !isPositive)
             {
                 trasactions = new List<AspireTransaction>
                 {
@@ -113,7 +125,7 @@ namespace Bank2Budget
                 return trasactions;
             }
 
-            if (oldTransaction.Description?.Contains("INTERMOUNTAIN GA", StringComparison.CurrentCultureIgnoreCase) ?? false && oldTransaction.Amount < 0)
+            if ((oldTransaction.Description?.Contains("INTERMOUNTAIN GA", StringComparison.CurrentCultureIgnoreCase) ?? false) && !isPositive)
             {
                 trasactions = new List<AspireTransaction>
                 {
@@ -130,7 +142,7 @@ namespace Bank2Budget
                 return trasactions;
             }
 
-            if (oldTransaction.Description?.Contains("WALGREENS", StringComparison.CurrentCultureIgnoreCase) ?? false && oldTransaction.Amount < 0)
+            if ((oldTransaction.Description?.Contains("WALGREENS", StringComparison.CurrentCultureIgnoreCase) ?? false) && !isPositive)
             {
                 trasactions = new List<AspireTransaction>
                 {
@@ -146,7 +158,7 @@ namespace Bank2Budget
                 return trasactions;
             }
 
-            if (oldTransaction.Description?.Contains("Google One", StringComparison.CurrentCultureIgnoreCase) ?? false && oldTransaction.Amount < 0)
+            if ((oldTransaction.Description?.Contains("Google One", StringComparison.CurrentCultureIgnoreCase) ?? false) && !isPositive)
             {
                 trasactions = new List<AspireTransaction>
                 {
@@ -163,7 +175,7 @@ namespace Bank2Budget
                 return trasactions;
             }
 
-            if (oldTransaction.Description?.Contains("Payment to Zander Insurance", StringComparison.CurrentCultureIgnoreCase) ?? false && oldTransaction.Amount < 0)
+            if ((oldTransaction.Description?.Contains("Payment to Zander Insurance", StringComparison.CurrentCultureIgnoreCase) ?? false) && !isPositive)
             {
                 trasactions = new List<AspireTransaction>
                 {
@@ -180,7 +192,7 @@ namespace Bank2Budget
                 return trasactions;
             }
 
-            if (oldTransaction.Description?.Contains("Loan Advance Cre COSTCO WHSE", StringComparison.CurrentCultureIgnoreCase) ?? false && oldTransaction.Amount < 0)
+            if ((oldTransaction.Description?.Contains("Loan Advance Cre COSTCO WHSE", StringComparison.CurrentCultureIgnoreCase) ?? false) && !isPositive)
             {
                 trasactions = new List<AspireTransaction>
                 {
@@ -196,7 +208,7 @@ namespace Bank2Budget
                 return trasactions;
             }
 
-            if (oldTransaction.Description?.Contains("Rent CO: Eden Operating", StringComparison.CurrentCultureIgnoreCase) ?? false && oldTransaction.Amount < 0)
+            if ((oldTransaction.Description?.Contains("Rent CO: Eden Operating", StringComparison.CurrentCultureIgnoreCase) ?? false) && !isPositive)
             {
                 trasactions = new List<AspireTransaction>
                 {
@@ -213,7 +225,7 @@ namespace Bank2Budget
                 return trasactions;
             }
 
-            if (oldTransaction.Description?.Contains("The Church Of Jesus Christ", StringComparison.CurrentCultureIgnoreCase) ?? false && oldTransaction.Amount < 0)
+            if ((oldTransaction.Description?.Contains("The Church Of Jesus Christ", StringComparison.CurrentCultureIgnoreCase) ?? false) && !isPositive)
             {
                 trasactions = new List<AspireTransaction>
                 {

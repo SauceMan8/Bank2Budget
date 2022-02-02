@@ -1,0 +1,116 @@
+{
+    "transactions": [
+    {
+        "transactionDescription": "Salary",
+        "amount" : 1,
+        "budgetEntry" : [
+        {
+            "inflow" : "{Amount}",
+            "category" : "Available",
+            "memo" : "PayCheck ({Amount})"
+        },
+        {
+            "outflow" : "0",
+            "category" : "InTax",
+            "memo" : "PayCheck Deductions (pre deposit)"
+        },
+        {
+            "outflow" : "0",
+            "category" : "MiscDeduct",
+            "memo" : "PayCheck Deductions (pre deposit)"
+        }]
+    },
+    {
+        "transactionDescription": "To Loan",
+        "amount" : -1,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "category" : "CreditCard",
+            "memo" : "Account Transfer"
+        }]
+    },
+    {
+        "transactionDescription": "From Share",
+        "amount" : 1,
+        "budgetEntry" : []
+    },
+    {
+        "transactionDescription": "ROCKY MOUNTAIN",
+        "amount" : -1,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "category" : "Electic",
+            "memo" : "Rocky Mountain Power"
+        }]
+    },
+    {
+        "transactionDescription": "INTERMOUNTAIN GA",
+        "amount" : -1,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "category" : "NaturalGas",
+            "memo" : "Intermountain Gas"
+        }]
+    },
+    {
+        "transactionDescription": "WALGREENS",
+        "amount" : -1,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "memo" : "Walgreens"
+        }]
+    },
+    {
+        "transactionDescription": "Google One",
+        "amount" : -1,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "category" : "GoogleStorage",
+            "memo" : "Google Storage"
+        }]
+    },
+    {
+        "transactionDescription": "Payment to Zander Insurance",
+        "amount" : -1,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "category" : "ZanderID",
+            "memo" : "Zander ID Theft"
+        }]
+    },
+    {
+        "transactionDescription": "COSTCO WHSE",
+        "amount" : -1,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "memo" : "Costco"
+        }]
+    },
+    {
+        "transactionDescription": "Rent CO: Eden Operating",
+        "amount" : -1,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "category" : "Rent",
+            "memo" : "Rent"
+        }]
+    },
+    {
+        "transactionDescription": "The Church Of Jesus Christ",
+        "amount" : -1,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "category" : "Tithes",
+            "memo" : "Tithing"
+        }]
+    }]
+}
