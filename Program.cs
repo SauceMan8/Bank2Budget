@@ -143,7 +143,7 @@ namespace Bank2Budget
                 if (replacement.TransactionDescription == null) continue;
 
                 if (description.Contains(replacement.TransactionDescription, StringComparison.CurrentCultureIgnoreCase) 
-                    && replacement.TransactionType == transactionType
+                    && (transactionType == TransactionType.Undefined || replacement.TransactionType == transactionType)
                     && (replacement.TransactionMax == null || replacement.TransactionMax >= Math.Abs(oldTransaction.Amount))
                     && (replacement.TransactionMin == null || replacement.TransactionMin >= Math.Abs(oldTransaction.Amount)))
                 {
