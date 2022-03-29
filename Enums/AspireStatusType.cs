@@ -1,15 +1,15 @@
 namespace Bank2Budget
 {
-    public class AspireStatusType 
+    public class AspireStatusType
     {
-        public static AspireStatusType Undefined {get;} = new AspireStatusType(-1, "");
-        public static AspireStatusType Pending {get;} = new AspireStatusType(0, "🅿️");
-        public static AspireStatusType Complete {get;} = new AspireStatusType(1, "✅");
+        public static AspireStatusType Undefined { get; } = new AspireStatusType(-1, "");
+        public static AspireStatusType Pending { get; } = new AspireStatusType(0, "🅿️");
+        public static AspireStatusType Complete { get; } = new AspireStatusType(1, "✅");
 
         public string Name { get; private set; }
         public int Value { get; private set; }
 
-        private AspireStatusType(int val, string name) 
+        private AspireStatusType(int val, string name)
         {
             Value = val;
             Name = name;
@@ -17,7 +17,7 @@ namespace Bank2Budget
 
         public static IEnumerable<AspireStatusType> List()
         {
-            return new[]{Pending,Complete};
+            return new[] { Pending, Complete };
         }
 
         public static AspireStatusType FromString(string AspireStatusTypeString)

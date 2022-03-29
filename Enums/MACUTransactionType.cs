@@ -1,15 +1,15 @@
 namespace Bank2Budget
 {
-    public class MACUTransactionType 
+    public class MACUTransactionType
     {
-        public static MACUTransactionType Undefined {get;} = new MACUTransactionType(-1, "Undefined");
-        public static MACUTransactionType Debit {get;} = new MACUTransactionType(0, "Debit");
-        public static MACUTransactionType Credit {get;} = new MACUTransactionType(1, "Credit");
+        public static MACUTransactionType Undefined { get; } = new MACUTransactionType(-1, "Undefined");
+        public static MACUTransactionType Debit { get; } = new MACUTransactionType(0, "Debit");
+        public static MACUTransactionType Credit { get; } = new MACUTransactionType(1, "Credit");
 
         public string Name { get; private set; }
         public int Value { get; private set; }
 
-        private MACUTransactionType(int val, string name) 
+        private MACUTransactionType(int val, string name)
         {
             Value = val;
             Name = name;
@@ -17,7 +17,7 @@ namespace Bank2Budget
 
         public static IEnumerable<MACUTransactionType> List()
         {
-            return new[]{Debit,Credit};
+            return new[] { Debit, Credit };
         }
 
         public static MACUTransactionType FromString(string MACUTransactionTypeString)

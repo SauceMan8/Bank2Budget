@@ -1,5 +1,5 @@
 namespace Bank2Budget
-{    
+{
     public class MACUTransaction
     {
         public DateOnly PostingDate;

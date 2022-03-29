@@ -1,7 +1,7 @@
 using Newtonsoft.Json;
 
 namespace Bank2Budget
-{    
+{
     public class TransactionPresets
     {
         public string? TransactionDescription;

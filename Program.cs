@@ -24,7 +24,7 @@ namespace Bank2Budget
             var macuTransacts2 = FileHelper.GetMACUTransactions(inputFile2);
             var aspireTransacts = MappingHelper.GetAspireTransactionsFromMACUTransactions(macuTransacts, AspireAccount.MACUDebit);
             aspireTransacts.AddRange(MappingHelper.GetAspireTransactionsFromMACUTransactions(macuTransacts2, AspireAccount.MACUCredit));
-            
+
             var orderedTrasactions = aspireTransacts.OrderBy(t => t.Date).ToList();
             FileHelper.WriteNewFile(outputFile, orderedTrasactions);
         }
@@ -50,10 +50,10 @@ namespace Bank2Budget
             if (oldTransaction == null)
                 return trasactions;
 
-            oldTransaction.Description = oldTransaction.Description?.Replace("Loan Advance Cre ","");
+            oldTransaction.Description = oldTransaction.Description?.Replace("Loan Advance Cre ", "");
 
             var replacedTransaction = TrasactionReplacementHelper.Static.GetAspireTransactions(oldTransaction, account);
-            if (replacedTransaction != null) 
+            if (replacedTransaction != null)
                 return replacedTransaction;
 
             var newTrasaction = new AspireTransaction();
@@ -75,14 +75,14 @@ namespace Bank2Budget
         }
     }
 
-    public static class FileHelper 
+    public static class FileHelper
     {
         public static List<MACUTransaction> GetMACUTransactions(string FilePath)
         {
             StreamReader sr = new StreamReader(FilePath);
             var MACUTransactions = new List<MACUTransaction>();
             string? line;
-            string[] row = new string [13];
+            string[] row = new string[13];
             var isFirst = true;
             while ((line = sr.ReadLine()) != null)
             {
@@ -142,7 +142,7 @@ namespace Bank2Budget
             {
                 if (replacement.TransactionDescription == null) continue;
 
-                if (description.Contains(replacement.TransactionDescription, StringComparison.CurrentCultureIgnoreCase) 
+                if (description.Contains(replacement.TransactionDescription, StringComparison.CurrentCultureIgnoreCase)
                     && (transactionType == TransactionType.Undefined || replacement.TransactionType == transactionType)
                     && (replacement.TransactionMax == null || replacement.TransactionMax >= Math.Abs(oldTransaction.Amount))
                     && (replacement.TransactionMin == null || replacement.TransactionMin >= Math.Abs(oldTransaction.Amount)))

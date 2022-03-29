@@ -1,17 +1,17 @@
 namespace Bank2Budget
 {
-    public class AspireAccount 
+    public class AspireAccount
     {
-        public static AspireAccount Undefined {get;} = new AspireAccount(-1, "");
-        public static AspireAccount MACUDebit {get;} = new AspireAccount(0, "💰 MACU Checking");
-        public static AspireAccount MACUCredit {get;} = new AspireAccount(1, "💳 MACU Credit Card");
-        public static AspireAccount MACUSavings {get;} = new AspireAccount(2, "MACU Savings");
-        public static AspireAccount MedSavings {get;} = new AspireAccount(3, "Medical Savings");
+        public static AspireAccount Undefined { get; } = new AspireAccount(-1, "");
+        public static AspireAccount MACUDebit { get; } = new AspireAccount(0, "💰 MACU Checking");
+        public static AspireAccount MACUCredit { get; } = new AspireAccount(1, "💳 MACU Credit Card");
+        public static AspireAccount MACUSavings { get; } = new AspireAccount(2, "MACU Savings");
+        public static AspireAccount MedSavings { get; } = new AspireAccount(3, "Medical Savings");
 
         public string Name { get; private set; }
         public int Value { get; private set; }
 
-        private AspireAccount(int val, string name) 
+        private AspireAccount(int val, string name)
         {
             Value = val;
             Name = name;
@@ -19,7 +19,7 @@ namespace Bank2Budget
 
         public static IEnumerable<AspireAccount> List()
         {
-            return new[]{MACUDebit,MACUCredit,MACUSavings,MedSavings};
+            return new[] { MACUDebit, MACUCredit, MACUSavings, MedSavings };
         }
 
         public static AspireAccount FromString(string AspireAccountString)
