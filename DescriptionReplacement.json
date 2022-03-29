@@ -1,101 +1,102 @@
-{
-    "transactions": [
+[
     {
         "transactionDescription": "Salary",
-        "amount" : 1,
+        "transactionType" : 2,
         "budgetEntry" : [
         {
             "inflow" : "{Amount}",
-            "category" : "Available",
+            "category" : "Available to budget",
             "memo" : "PayCheck ({Amount})"
         },
         {
             "outflow" : "0",
-            "category" : "InTax",
+            "category" : "Income Taxes",
             "memo" : "PayCheck Deductions (pre deposit)"
         },
         {
             "outflow" : "0",
-            "category" : "MiscDeduct",
+            "category" : "Misc Deductions",
             "memo" : "PayCheck Deductions (pre deposit)"
         }]
     },
     {
         "transactionDescription": "To Loan",
-        "amount" : -1,
+        "transactionType" : 1,
         "budgetEntry" : [
         {
             "outflow" : "{Amount}",
-            "category" : "CreditCard",
+            "category" : "💳 MACU Credit Card",
             "memo" : "Account Transfer"
         }]
     },
     {
         "transactionDescription": "From Share",
-        "amount" : 1,
+        "transactionType" : 2,
         "budgetEntry" : []
     },
     {
         "transactionDescription": "ROCKY MOUNTAIN",
-        "amount" : -1,
+        "transactionType" : 1,
         "budgetEntry" : [
         {
             "outflow" : "{Amount}",
-            "category" : "Electic",
+            "category" : "Electric Bill",
             "memo" : "Rocky Mountain Power"
         }]
     },
     {
         "transactionDescription": "INTERMOUNTAIN GA",
-        "amount" : -1,
+        "transactionType" : 1,
         "budgetEntry" : [
         {
             "outflow" : "{Amount}",
-            "category" : "NaturalGas",
+            "category" : "Natural Gas Bill",
             "memo" : "Intermountain Gas"
         }]
     },
     {
         "transactionDescription": "WALGREENS",
-        "amount" : -1,
+        "transactionType" : 1,
         "budgetEntry" : [
         {
             "outflow" : "{Amount}",
+            "category" : "Medical",
             "memo" : "Walgreens"
         }]
     },
     {
         "transactionDescription": "Google One",
-        "amount" : -1,
+        "transactionType" : 1,
         "budgetEntry" : [
         {
             "outflow" : "{Amount}",
-            "category" : "GoogleStorage",
+            "category" : "Google Storage",
             "memo" : "Google Storage"
         }]
     },
     {
         "transactionDescription": "Payment to Zander Insurance",
-        "amount" : -1,
+        "transactionType" : 1,
         "budgetEntry" : [
         {
             "outflow" : "{Amount}",
-            "category" : "ZanderID",
+            "category" : "Zander ID Theft",
             "memo" : "Zander ID Theft"
         }]
     },
     {
-        "transactionDescription": "COSTCO WHSE",
-        "amount" : -1,
+        "transactionDescription": "COSTCO",
+        "transactionType" : 1,
         "budgetEntry" : [
         {
             "outflow" : "{Amount}",
+            "category" : "Groceries",
             "memo" : "Costco"
         }]
     },
     {
         "transactionDescription": "Rent CO: Eden Operating",
-        "amount" : -1,
+        "transactionType" : 1,
         "budgetEntry" : [
         {
             "outflow" : "{Amount}",
@@ -105,12 +106,154 @@
     },
     {
         "transactionDescription": "The Church Of Jesus Christ",
-        "amount" : -1,
+        "transactionType" : 1,
         "budgetEntry" : [
         {
             "outflow" : "{Amount}",
             "category" : "Tithes",
             "memo" : "Tithing"
         }]
-    }]
-}
+    },
+    {
+        "transactionDescription": "Chick-fil-A",
+        "transactionType" : 1,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "category" : "Dining Out",
+            "memo" : "Chick-fil-A"
+        }]
+    },
+    {
+        "transactionDescription": "Little Caesars",
+        "transactionType" : 1,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "category" : "Dining Out",
+            "memo" : "Little Caesars"
+        }]
+    },
+    {
+        "transactionDescription": "Broulim's",
+        "transactionType" : 1,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "category" : "Groceries",
+            "memo" : "Broulim's"
+        }]
+    },
+    {
+        "transactionDescription": "Walmart",
+        "transactionType" : 1,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "category" : "Groceries",
+            "memo" : "Walmart"
+        }]
+    },
+    {
+        "transactionDescription": "Chevron",
+        "transactionType" : 1,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "category" : "Gasoline",
+            "memo" : "Chevron"
+        }]
+    },
+    {
+        "transactionDescription": "Conoco",
+        "transactionType" : 1,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "category" : "Gasoline",
+            "memo" : "Conoco Gas Station"
+        }]
+    },
+    {
+        "transactionDescription": "Spotify",
+        "transactionType" : 1,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "category" : "Spotify/Hulu",
+            "memo" : "Spotify"
+        }]
+    },
+    {
+        "transactionDescription": "State Farm",
+        "transactionType" : 1,
+        "transactionMax" : 10,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "category" : "Rent Insurance",
+            "memo" : "Payment to State Farm"
+        }]
+    },
+    {
+        "transactionDescription": "State Farm",
+        "transactionType" : 1,
+        "transactionMin" : 10,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "category" : "Car Insurance",
+            "memo" : "Payment to State Farm"
+        }]
+    },
+    {
+        "transactionDescription": "Steam",
+        "transactionType" : 1,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "category" : "Fun Money",
+            "memo" : "Steam"
+        }]
+    },
+    {
+        "transactionDescription": "RAYS CAR WASH",
+        "transactionType" : 1,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "category" : "Auto Maintenance",
+            "memo" : "Ray's Car Wash"
+        }]
+    },
+    {
+        "transactionDescription": "Disney Mobile",
+        "transactionType" : 1,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "category" : "Disney+",
+            "memo" : "Disney+"
+        }]
+    },
+    {
+        "transactionDescription": "Bath & Body Works",
+        "transactionType" : 1,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "category" : "Home Improvement",
+            "memo" : "Bath & Body Works"
+        }]
+    },
+    {
+        "transactionDescription": "Carter's",
+        "transactionType" : 1,
+        "budgetEntry" : [
+        {
+            "outflow" : "{Amount}",
+            "category" : "Clothing",
+            "memo" : "Carter's"
+        }]
+    }
+]

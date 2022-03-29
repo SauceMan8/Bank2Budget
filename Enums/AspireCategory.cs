@@ -54,13 +54,15 @@ namespace Bank2Budget
 
         }
 
-        public static AspireCategory FromString(string AspireCategoryString)
+        public static AspireCategory FromString(string? AspireCategoryString)
         {
+            if (AspireCategoryString == null) return AspireCategory.Undefined;
             return List().Single(r => String.Equals(r.Name, AspireCategoryString, StringComparison.OrdinalIgnoreCase));
         }
 
-        public static AspireCategory FromValue(int value)
+        public static AspireCategory FromValue(int? value)
         {
+            if (value == null) return AspireCategory.Undefined;
             return List().Single(r => r.Value == value);
         }
     }

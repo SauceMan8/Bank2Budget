@@ -12,12 +12,12 @@ namespace Bank2Budget
         {
             var inputFile1 = "ExportedTransactionsCheck.csv";
             var inputFile2 = "ExportedTransactionsCredit.csv";
-            var outputFile = "ExportedTransactionsCredit.csv";
+            var outputFile = "NewAll.csv";
             if (args != null && args.Count() > 0)
             {
                 inputFile1 = args[0];
                 inputFile2 = args[1];
-                outputFile = "ExportedTransactionsCredit.csv";
+                outputFile = args[2];
             }
 
             var macuTransacts = FileHelper.GetMACUTransactions(inputFile1);
@@ -32,7 +32,6 @@ namespace Bank2Budget
 
     public static class MappingHelper
     {
-        
         public static List<AspireTransaction> GetAspireTransactionsFromMACUTransactions(List<MACUTransaction> oldTransactions, AspireAccount account)
         {
             var newTrasactions = new List<AspireTransaction>();
@@ -51,196 +50,11 @@ namespace Bank2Budget
             if (oldTransaction == null)
                 return trasactions;
 
-            var isPositive = oldTransaction.Amount > 0;
-            
-            if ((oldTransaction.Description?.Contains("MELALEUCA", StringComparison.CurrentCultureIgnoreCase) ?? false) && isPositive)
-            {
-                trasactions = new List<AspireTransaction>
-                {
-                    new AspireTransaction
-                    {
-                        Date = oldTransaction.EffectiveDate,
-                        Inflow = oldTransaction.Amount,
-                        Category = AspireCategory.Available,
-                        Memo = $"PayCheck ({oldTransaction.Amount:0.00})",
-                        Account = account,
-                        Status = AspireStatusType.Complete
-                    },
-                    new AspireTransaction 
-                    {
-                        Date = oldTransaction.EffectiveDate,
-                        Outflow = 0,
-                        Category = AspireCategory.InTax,
-                        Memo = "PayCheck Deductions (pre deposit)",
-                        Account = account,
-                        Status = AspireStatusType.Complete
-                    },
-                    new AspireTransaction 
-                    {
-                        Date = oldTransaction.EffectiveDate,
-                        Outflow = 0,
-                        Category = AspireCategory.MiscDeduct,
-                        Memo = "PayCheck Deductions (pre deposit)",
-                        Account = account,
-                        Status = AspireStatusType.Complete
-                    }
-                };
-                return trasactions;
-            }
+            oldTransaction.Description = oldTransaction.Description?.Replace("Loan Advance Cre ","");
 
-            if ((oldTransaction.Description?.Contains("To Loan", StringComparison.CurrentCultureIgnoreCase) ?? false) && !isPositive)
-            {
-                trasactions = new List<AspireTransaction>
-                {
-                    new AspireTransaction
-                    {
-                        Date = oldTransaction.EffectiveDate,
-                        Outflow = oldTransaction.Amount * (-1),
-                        Category = AspireCategory.CreditCard,
-                        Memo = "Account Transfer",
-                        Account = account,
-                        Status = AspireStatusType.Complete
-                    }
-                };
-                return trasactions;
-            }
-
-            if ((oldTransaction.Description?.Contains("From Share", StringComparison.CurrentCultureIgnoreCase) ?? false) && isPositive)
-                return trasactions;
-
-            if ((oldTransaction.Description?.Contains("ROCKY MOUNTAIN", StringComparison.CurrentCultureIgnoreCase) ?? false) && !isPositive)
-            {
-                trasactions = new List<AspireTransaction>
-                {
-                    new AspireTransaction
-                    {
-                        Date = oldTransaction.EffectiveDate,
-                        Outflow = oldTransaction.Amount * (-1),
-                        Category = AspireCategory.Electic,
-                        Memo = "Rocky Mountain Power",
-                        Account = account,
-                        Status = AspireStatusType.Complete
-                    }
-                };
-                return trasactions;
-            }
-
-            if ((oldTransaction.Description?.Contains("INTERMOUNTAIN GA", StringComparison.CurrentCultureIgnoreCase) ?? false) && !isPositive)
-            {
-                trasactions = new List<AspireTransaction>
-                {
-                    new AspireTransaction
-                    {
-                        Date = oldTransaction.EffectiveDate,
-                        Outflow = oldTransaction.Amount * (-1),
-                        Category = AspireCategory.NaturalGas,
-                        Memo = "Intermountain Gas",
-                        Account = account,
-                        Status = AspireStatusType.Complete
-                    }
-                };
-                return trasactions;
-            }
-
-            if ((oldTransaction.Description?.Contains("WALGREENS", StringComparison.CurrentCultureIgnoreCase) ?? false) && !isPositive)
-            {
-                trasactions = new List<AspireTransaction>
-                {
-                    new AspireTransaction
-                    {
-                        Date = oldTransaction.EffectiveDate,
-                        Outflow = oldTransaction.Amount * (-1),
-                        Memo = "Walgreens",
-                        Account = account,
-                        Status = AspireStatusType.Complete
-                    }
-                };
-                return trasactions;
-            }
-
-            if ((oldTransaction.Description?.Contains("Google One", StringComparison.CurrentCultureIgnoreCase) ?? false) && !isPositive)
-            {
-                trasactions = new List<AspireTransaction>
-                {
-                    new AspireTransaction
-                    {
-                        Date = oldTransaction.EffectiveDate,
-                        Outflow = oldTransaction.Amount * (-1),
-                        Category = AspireCategory.GoogleStorage,
-                        Memo = "Google Storage",
-                        Account = account,
-                        Status = AspireStatusType.Complete
-                    }
-                };
-                return trasactions;
-            }
-
-            if ((oldTransaction.Description?.Contains("Payment to Zander Insurance", StringComparison.CurrentCultureIgnoreCase) ?? false) && !isPositive)
-            {
-                trasactions = new List<AspireTransaction>
-                {
-                    new AspireTransaction
-                    {
-                        Date = oldTransaction.EffectiveDate,
-                        Outflow = oldTransaction.Amount * (-1),
-                        Category = AspireCategory.ZanderID,
-                        Memo = "Zander ID Theft",
-                        Account = account,
-                        Status = AspireStatusType.Complete
-                    }
-                };
-                return trasactions;
-            }
-
-            if ((oldTransaction.Description?.Contains("Loan Advance Cre COSTCO WHSE", StringComparison.CurrentCultureIgnoreCase) ?? false) && !isPositive)
-            {
-                trasactions = new List<AspireTransaction>
-                {
-                    new AspireTransaction
-                    {
-                        Date = oldTransaction.EffectiveDate,
-                        Outflow = oldTransaction.Amount * (-1),
-                        Memo = "Costco",
-                        Account = account,
-                        Status = AspireStatusType.Complete
-                    }
-                };
-                return trasactions;
-            }
-
-            if ((oldTransaction.Description?.Contains("Rent CO: Eden Operating", StringComparison.CurrentCultureIgnoreCase) ?? false) && !isPositive)
-            {
-                trasactions = new List<AspireTransaction>
-                {
-                    new AspireTransaction
-                    {
-                        Date = oldTransaction.EffectiveDate,
-                        Outflow = oldTransaction.Amount * (-1),
-                        Category = AspireCategory.Rent,
-                        Memo = "Rent",
-                        Account = account,
-                        Status = AspireStatusType.Complete
-                    }
-                };
-                return trasactions;
-            }
-
-            if ((oldTransaction.Description?.Contains("The Church Of Jesus Christ", StringComparison.CurrentCultureIgnoreCase) ?? false) && !isPositive)
-            {
-                trasactions = new List<AspireTransaction>
-                {
-                    new AspireTransaction
-                    {
-                        Date = oldTransaction.EffectiveDate,
-                        Outflow = oldTransaction.Amount * (-1),
-                        Category = AspireCategory.Tithes,
-                        Memo = "Tithing",
-                        Account = account,
-                        Status = AspireStatusType.Complete
-                    }
-                };
-                return trasactions;
-            }
+            var replacedTransaction = TrasactionReplacementHelper.Static.GetAspireTransactions(oldTransaction, account);
+            if (replacedTransaction != null) 
+                return replacedTransaction;
 
             var newTrasaction = new AspireTransaction();
 
@@ -259,7 +73,6 @@ namespace Bank2Budget
             trasactions.Add(newTrasaction);
             return trasactions;
         }
-
     }
 
     public static class FileHelper 
@@ -305,6 +118,73 @@ namespace Bank2Budget
             }
 
             File.WriteAllLines(fileName, lines);
+        }
+    }
+
+    public class TrasactionReplacementHelper
+    {
+        public static List<TransactionPresets>? _replacements;
+        public List<TransactionPresets>? Replacements => _replacements ??= TransactionPresets.ReadTransactionJson();
+
+        private static TrasactionReplacementHelper? _static;
+
+        public static TrasactionReplacementHelper Static => _static ??= new TrasactionReplacementHelper();
+
+        public List<AspireTransaction>? GetAspireTransactions(MACUTransaction oldTransaction, AspireAccount account)
+        {
+            var description = oldTransaction.Description;
+            if (Replacements == null || description == null)
+                return null;
+
+            var transactionType = oldTransaction.Amount > 0 ? TransactionType.Credit : TransactionType.Charge;
+
+            foreach (var replacement in Replacements)
+            {
+                if (replacement.TransactionDescription == null) continue;
+
+                if (description.Contains(replacement.TransactionDescription, StringComparison.CurrentCultureIgnoreCase) 
+                    && replacement.TransactionType == transactionType
+                    && (replacement.TransactionMax == null || replacement.TransactionMax >= Math.Abs(oldTransaction.Amount))
+                    && (replacement.TransactionMin == null || replacement.TransactionMin >= Math.Abs(oldTransaction.Amount)))
+                {
+                    if (replacement.BudgetEntry == null) continue;
+                    var transactions = new List<AspireTransaction>();
+                    if (replacement.BudgetEntry.Count == 0) return transactions;
+                    foreach (var entry in replacement.BudgetEntry)
+                    {
+                        decimal? inflow = null;
+                        decimal? outflow = null;
+                        if (entry.Inflow != null)
+                        {
+                            if (entry.Inflow.Contains("{Amount}", StringComparison.CurrentCultureIgnoreCase))
+                                inflow = oldTransaction.Amount;
+                            else if (decimal.TryParse(entry.Inflow, out var value))
+                                inflow = value;
+                        }
+                        if (entry.Outflow != null)
+                        {
+                            if (entry.Outflow.Contains("{Amount}", StringComparison.CurrentCultureIgnoreCase))
+                                outflow = oldTransaction.Amount;
+                            else if (decimal.TryParse(entry.Outflow, out var value))
+                                outflow = value;
+                        }
+
+                        var trasaction = new AspireTransaction
+                        {
+                            Date = entry.Date ?? oldTransaction.EffectiveDate,
+                            Inflow = inflow,
+                            Outflow = outflow * (-1),
+                            Category = AspireCategory.FromString(entry.Category),
+                            Memo = entry.Memo?.Replace("{Amount}", $"{oldTransaction.Amount:0.00}", StringComparison.CurrentCultureIgnoreCase),
+                            Account = entry.Account != null ? AspireAccount.FromString(entry.Account) : account,
+                            Status = entry.Status != null ? AspireStatusType.FromString(entry.Status) : AspireStatusType.Complete
+                        };
+                        transactions.Add(trasaction);
+                    }
+                    return transactions;
+                }
+            }
+            return null;
         }
     }
 }
