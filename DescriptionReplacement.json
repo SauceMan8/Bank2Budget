@@ -136,6 +136,17 @@
         ]
     },
     {
+        "transactionDescription": "COSTA VIDA",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Dining Out",
+                "memo": "Costa Vida"
+            }
+        ]
+    },
+    {
         "transactionDescription": "Little Caesars",
         "transactionType": 1,
         "budgetEntry": [
@@ -187,6 +198,28 @@
                 "outflow": "{Amount}",
                 "category": "Gasoline",
                 "memo": "Conoco Gas Station"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "Pilot",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Gasoline",
+                "memo": "Pilot Flying J"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "Banner Life",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Life Insurance",
+                "memo": "Banner Life Insurance"
             }
         ]
     },
@@ -277,6 +310,17 @@
                 "outflow": "{Amount}",
                 "category": "Clothing",
                 "memo": "Carter's"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "Payment to Chase",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Everything Else",
+                "memo": "Amazon Card"
             }
         ]
     }
