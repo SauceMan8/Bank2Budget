@@ -323,5 +323,76 @@
                 "memo": "Amazon Card"
             }
         ]
+    },
+    {
+        "transactionDescription": "McDonald",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Dining Out",
+                "memo": "McDonald"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "LOVE S TRAVEL",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Gasoline",
+                "memo": "Love's Gas"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "MOBILE CHECK DEPOSIT: Profit Sharing",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Available to budget",
+                "memo": "Profit Sharing Check ({Amount})"
+            },
+            {
+                "outflow": "0",
+                "category": "Income Taxes",
+                "memo": "Profit Sharing Deductions (pre deposit)"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "Nintendo",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Fun Money",
+                "memo": "Nintendo"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "NEESEESDRES",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Clothing",
+                "memo": "Neesee's Dresses"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "TEASED SALON",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Everything Else",
+                "memo": "Teased Salon & Spa"
+            }
+        ]
     }
 ]

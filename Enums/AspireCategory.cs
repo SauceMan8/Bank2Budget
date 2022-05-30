@@ -37,6 +37,7 @@ namespace Bank2Budget
         public static AspireCategory Medical { get; } = new AspireCategory(31, "Medical");
         public static AspireCategory Available { get; } = new AspireCategory(32, "Available to budget");
         public static AspireCategory CreditCard { get; } = new AspireCategory(33, "💳 MACU Credit Card");
+        public static AspireCategory LifeInsurance { get; } = new AspireCategory(34, "Life Insurance");
 
         public string Name { get; private set; }
         public int Value { get; private set; }
@@ -50,7 +51,7 @@ namespace Bank2Budget
         public static IEnumerable<AspireCategory> List()
         {
             return new[] { DineOut, Groceries, Gasoline, EveryElse, Fun, HomeImprove, Electic, RentInsurance, CarInsurance, NaturalGas, Rent, Cell, GoogleStorage, DisneyP, Spotify, NSO, ZanderID, Prime, Costco, AntiVirus, Auto, Clothes, Tithes, Gifts, Car,
-                            HomePayment, Tech, Baby, LIS, InTax, MiscDeduct, Medical, Available, CreditCard };
+                            HomePayment, Tech, Baby, LIS, InTax, MiscDeduct, Medical, Available, CreditCard, LifeInsurance };
 
         }
 
