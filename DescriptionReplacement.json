@@ -394,5 +394,60 @@
                 "memo": "Teased Salon & Spa"
             }
         ]
+    },
+    {
+        "transactionDescription": "Real Deals",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Clothing",
+                "memo": "Real Deals"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "Real Deals",
+        "transactionType": 2,
+        "budgetEntry": [
+            {
+                "inflow": "{Amount}",
+                "category": "Clothing",
+                "memo": "Real Deals Refund"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "Target",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Everything Else",
+                "memo": "Target"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "Crumbl Cookies",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Dining Out",
+                "memo": "Crumbl Cookies"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "FIVE GUYS",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Dining Out",
+                "memo": "Five Guys"
+            }
+        ]
     }
 ]
