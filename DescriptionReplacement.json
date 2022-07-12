@@ -81,6 +81,17 @@
         ]
     },
     {
+        "transactionDescription": "Google Storage",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Google Storage",
+                "memo": "Google Storage"
+            }
+        ]
+    },
+    {
         "transactionDescription": "Payment to Zander Insurance",
         "transactionType": 1,
         "budgetEntry": [
@@ -198,6 +209,17 @@
                 "outflow": "{Amount}",
                 "category": "Gasoline",
                 "memo": "Conoco Gas Station"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "Good2go",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Gasoline",
+                "memo": "Good2go Gas Station"
             }
         ]
     },

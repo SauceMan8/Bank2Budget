@@ -13,12 +13,12 @@ namespace Bank2Budget
             var inputFile1 = "ExportedTransactionsCheck.csv";
             var inputFile2 = "ExportedTransactionsCredit.csv";
             var outputFile = "NewAll.csv";
-            if (args != null && args.Count() > 0)
-            {
-                inputFile1 = args[0];
-                inputFile2 = args[1];
-                outputFile = args[2];
-            }
+            // if (args != null && args.Count() > 0)
+            // {
+            //     inputFile1 = args[0];
+            //     inputFile2 = args[1];
+            //     outputFile = args[2];
+            // }
 
             var macuTransacts = FileHelper.GetMACUTransactions(inputFile1);
             var macuTransacts2 = FileHelper.GetMACUTransactions(inputFile2);
