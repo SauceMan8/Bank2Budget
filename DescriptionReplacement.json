@@ -48,7 +48,18 @@
         ]
     },
     {
-        "transactionDescription": "INTERMOUNTAIN GA",
+        "transactionDescription": "POWER BILL",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Electric Bill",
+                "memo": "Rocky Mountain Power"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "INTERMOUNTAIN",
         "transactionType": 1,
         "budgetEntry": [
             {
@@ -136,6 +147,17 @@
         ]
     },
     {
+        "transactionDescription": "JesusChrist",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Tithes",
+                "memo": "Tithing"
+            }
+        ]
+    },
+    {
         "transactionDescription": "Chick-fil-A",
         "transactionType": 1,
         "budgetEntry": [
@@ -181,6 +203,17 @@
     },
     {
         "transactionDescription": "Walmart",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Groceries",
+                "memo": "Walmart"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "Wal-mart",
         "transactionType": 1,
         "budgetEntry": [
             {
@@ -369,6 +402,17 @@
         ]
     },
     {
+        "transactionDescription": "LOVE'S",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Gasoline",
+                "memo": "Love's Gas"
+            }
+        ]
+    },
+    {
         "transactionDescription": "MOBILE CHECK DEPOSIT: Profit Sharing",
         "transactionType": 1,
         "budgetEntry": [
@@ -524,6 +568,83 @@
                 "outflow": "{Amount}",
                 "category": "Clothing",
                 "memo": "Old Navy"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "Point S",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Auto Maintenance",
+                "memo": "Point S"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "Youtube Premium",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "YouTube Premium",
+                "memo": "Payment to Youtube Premium"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "Panda Express",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Dining Out",
+                "memo": "Panda Express"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "Smith's Marketplace",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Groceries",
+                "memo": "Smith's Marketplace"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "Smith's Fuel",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Gasoline",
+                "memo": "Smith's Fuel"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "Smith's",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Groceries",
+                "memo": "Smith's"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "Domino's Pizza",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Dining Out",
+                "memo": "Domino's Pizza"
             }
         ]
     }
