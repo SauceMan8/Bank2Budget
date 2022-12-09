@@ -103,6 +103,17 @@
         ]
     },
     {
+        "transactionDescription": "Google Cloud Storage",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Google Storage",
+                "memo": "Google Storage"
+            }
+        ]
+    },
+    {
         "transactionDescription": "Payment to Zander Insurance",
         "transactionType": 1,
         "budgetEntry": [
@@ -528,6 +539,17 @@
         ]
     },
     {
+        "transactionDescription": "Northwestern Mu",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Whole Life Insurance",
+                "memo": "Northwestern Mutual"
+            }
+        ]
+    },
+    {
         "transactionDescription": "Maverik",
         "transactionType": 1,
         "budgetEntry": [
@@ -594,6 +616,17 @@
         ]
     },
     {
+        "transactionDescription": "YoutubePremium",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "YouTube Premium",
+                "memo": "Payment to Youtube Premium"
+            }
+        ]
+    },
+    {
         "transactionDescription": "Panda Express",
         "transactionType": 1,
         "budgetEntry": [
@@ -645,6 +678,17 @@
                 "outflow": "{Amount}",
                 "category": "Dining Out",
                 "memo": "Domino's Pizza"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "CUPBOP",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Dining Out",
+                "memo": "CupBop"
             }
         ]
     }
