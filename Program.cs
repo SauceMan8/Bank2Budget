@@ -141,11 +141,11 @@ namespace Bank2Budget
             foreach (var replacement in Replacements)
             {
                 if (replacement.TransactionDescription == null) continue;
-
+                
                 if (description.Contains(replacement.TransactionDescription, StringComparison.CurrentCultureIgnoreCase)
                     && (transactionType == TransactionType.Undefined || replacement.TransactionType == transactionType)
                     && (replacement.TransactionMax == null || replacement.TransactionMax >= Math.Abs(oldTransaction.Amount))
-                    && (replacement.TransactionMin == null || replacement.TransactionMin >= Math.Abs(oldTransaction.Amount)))
+                    && (replacement.TransactionMin == null || replacement.TransactionMin <= Math.Abs(oldTransaction.Amount)))
                 {
                     if (replacement.BudgetEntry == null) continue;
                     var transactions = new List<AspireTransaction>();

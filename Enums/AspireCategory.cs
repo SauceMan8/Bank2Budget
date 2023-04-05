@@ -40,6 +40,7 @@ namespace Bank2Budget
         public static AspireCategory LifeInsurance { get; } = new AspireCategory(34, "Life Insurance");
         public static AspireCategory WholeLifeInsurance { get; } = new AspireCategory(35, "Whole Life Insurance");
         public static AspireCategory YouTubePremium { get; } = new AspireCategory(36, "YouTube Premium");
+        public static AspireCategory InternetBill { get; } = new AspireCategory(37, "Internet Bill");
 
         public string Name { get; private set; }
         public int Value { get; private set; }
@@ -53,7 +54,7 @@ namespace Bank2Budget
         public static IEnumerable<AspireCategory> List()
         {
             return new[] { DineOut, Groceries, Gasoline, EveryElse, Fun, HomeImprove, Electic, RentInsurance, CarInsurance, NaturalGas, Rent, Cell, GoogleStorage, DisneyP, Spotify, NSO, ZanderID, Prime, Costco, AntiVirus, Auto, Clothes, Tithes, Gifts, Car,
-                            HomePayment, Tech, Baby, LIS, InTax, MiscDeduct, Medical, Available, CreditCard, LifeInsurance, WholeLifeInsurance, YouTubePremium };
+                            HomePayment, Tech, Baby, LIS, InTax, MiscDeduct, Medical, Available, CreditCard, LifeInsurance, WholeLifeInsurance, YouTubePremium, InternetBill };
 
         }
 

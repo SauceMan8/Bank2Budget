@@ -21,6 +21,27 @@
         ]
     },
     {
+        "transactionDescription": "WAGES",
+        "transactionType": 2,
+        "budgetEntry": [
+            {
+                "inflow": "{Amount}",
+                "category": "Available to budget",
+                "memo": "PayCheck ({Amount})"
+            },
+            {
+                "outflow": "0",
+                "category": "Income Taxes",
+                "memo": "PayCheck Deductions (pre deposit)"
+            },
+            {
+                "outflow": "0",
+                "category": "Misc Deductions",
+                "memo": "PayCheck Deductions (pre deposit)"
+            }
+        ]
+    },
+    {
         "transactionDescription": "To Loan",
         "transactionType": 1,
         "budgetEntry": [
@@ -33,6 +54,11 @@
     },
     {
         "transactionDescription": "From Share",
+        "transactionType": 2,
+        "budgetEntry": []
+    },
+    {
+        "transactionDescription": "Credit Card Payment Received",
         "transactionType": 2,
         "budgetEntry": []
     },
@@ -125,7 +151,7 @@
         ]
     },
     {
-        "transactionDescription": "COSTCO",
+        "transactionDescription": "COSTCO WHSE",
         "transactionType": 1,
         "budgetEntry": [
             {
@@ -136,13 +162,26 @@
         ]
     },
     {
-        "transactionDescription": "Rent CO: Eden Operating",
+        "transactionDescription": "COSTCO GAS",
         "transactionType": 1,
         "budgetEntry": [
             {
                 "outflow": "{Amount}",
+                "category": "Gasoline",
+                "memo": "Costco Gas"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "Venmo",
+        "transactionType": 1,
+        "transactionMin" : 1800,
+        "transactionMax" : 2100,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
                 "category": "Rent",
-                "memo": "Rent"
+                "memo": "Rent (Venmo)"
             }
         ]
     },
@@ -689,6 +728,49 @@
                 "outflow": "{Amount}",
                 "category": "Dining Out",
                 "memo": "CupBop"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "Deposit by Check MOBILE CHECK DEPOSIT: Remote Deposit",
+        "transactionType": 2,
+        "budgetEntry": [
+            {
+                "inflow": "{Amount}",
+                "category": "Available to budget",
+                "memo": "Mobile Check Deposit"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "INST XFER CO: PAYPAL NAME",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "memo": "PayPal"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "COMCAST",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Internet Bill",
+                "memo": "Payment to Comcast"
+            }
+        ]
+    },
+    {
+        "transactionDescription": "GOSSNER FOODS",
+        "transactionType": 1,
+        "budgetEntry": [
+            {
+                "outflow": "{Amount}",
+                "category": "Groceries",
+                "memo": "Gossner Foods"
             }
         ]
     }
